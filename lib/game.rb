@@ -11,9 +11,9 @@ class Game
   end
 
   def is_still_ongoing?
-    if @enemies.map { |enemy| enemy.life_points > 0 } == true
+    if @human_player.life_points > 0 && @enemies.length == 0
       return false
-    elsif @human_player.life_points < 0
+    elsif @human_player.life_points <= 0
       return false
     else true
     end

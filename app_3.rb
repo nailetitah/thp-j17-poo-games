@@ -6,11 +6,9 @@ require_relative 'lib/player'
 require_relative 'lib/Human_player'
 
 # Démarrage du jeu
-row_intro = []
-row_intro << ["Bienvenue dans POO III !"]
+row_intro = [["Bienvenue dans POO III !"]]
 table_intro = Terminal::Table.new :rows => row_intro
 puts table_intro
-
 
 # Initialiation du joueur
 puts "Quel est ton nom de joueur ? "
@@ -37,7 +35,7 @@ follow_script
 
 # Phase d'attaque des ennemis
 rows_attack = []
-rows_attack << ["Attaque des ennemis", "Round #{i}"]
+rows_attack << ["Attaque des ennemis", "Round #{i}"] if my_game.is_still_ongoing? == true
 table_attack = Terminal::Table.new :rows => rows_attack
 puts table_attack
 
